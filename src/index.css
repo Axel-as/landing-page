@@ -1,0 +1,9 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+.glass { @apply bg-white/10 backdrop-blur-lg border border-white/20; }
+.gradient-bg { @apply bg-gradient-to-br from-midnight-900 via-midnight-800 to-midnight-500; }
+.gradient-text { @apply bg-gradient-to-r from-midnight-900 via-midnight-800 to-midnight-500 bg-clip-text text-transparent; }
+}
