@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            © 2026 Titan. Todos los derechos reservados.
+            © 2026 proyecto. Es un demo visual.
           </p>
 
           <div className="flex gap-4">

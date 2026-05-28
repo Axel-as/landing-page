@@ -16,7 +16,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <span className="text-2xl font-bold">TITAN</span>
+          <span className="text-2xl font-bold">proyecto</span>
         </div>
 
         <div className="hidden md:flex gap-8">

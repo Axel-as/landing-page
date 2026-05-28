@@ -38,7 +38,7 @@ export default function DemoTabs() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-5xl font-bold mb-4">Mirá Titan en acción</h2>
+          <h2 className="text-5xl font-bold mb-4">Mirá mi proyecto en acción</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400">Probá las features core sin crear cuenta</p>
         </motion.div>
 
