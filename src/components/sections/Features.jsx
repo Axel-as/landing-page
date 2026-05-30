@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import Card, { CardHeader, CardTitle, CardDescription } from '@/components/ui/Card'
-import Link from 'next/link'
 
 const features = [
   {
@@ -83,11 +82,11 @@ export default function Features() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feat, i) => (
-            <Link href="/demo" key={feat.title}>
+            <div key={feat.title}>
               <Card
                 variant="default"
                 hover
-                className="cursor-pointer h-full border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 transition"
+                className="cursor-default h-full border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 transition"
               >
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4 text-white">
@@ -97,7 +96,7 @@ export default function Features() {
                 </CardHeader>
                 <CardDescription>{feat.desc}</CardDescription>
               </Card>
-            </Link>
+            </div>
           ))}
         </div>
 

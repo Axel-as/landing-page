@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
-import Link from 'next/link'
 
 export default function Hero() {
   const { scrollY } = useScroll()
@@ -31,22 +30,22 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <Link href="/demo">
+            <a href="#features">
               <Button 
                 variant="primary" 
                 size="lg"
                 icon={<span>→</span>}
                 iconPosition="right"
               >
-                Ver disclaimer
-              </Button>
-            </Link>
-            
-            <Link href="#features">
-              <Button variant="secondary" size="lg">
                 Explorar diseño
               </Button>
-            </Link>
+            </a>
+            
+            <a href="#features">
+              <Button variant="secondary" size="lg">
+                Ver componentes
+              </Button>
+            </a>
           </div>
 
           <div className="flex flex-wrap gap-6 mt-10 text-sm">

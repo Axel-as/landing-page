@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
 
 const testimonials = [
   {
@@ -174,7 +173,7 @@ export default function Testimonials() {
               }}
               className={`h-2 rounded-full transition-all ${
                 i === current
-                ? 'bg-blue-500 w-8'
+               ? 'bg-blue-500 w-8'
                   : 'bg-gray-300 dark:bg-gray-700 w-2'
               }`}
               aria-label={`Ir a testimonio ${i + 1}`}

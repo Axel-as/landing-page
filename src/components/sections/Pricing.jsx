@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Card, { CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
-import Link from 'next/link'
 
 const plans = [
   {
@@ -84,7 +83,7 @@ export default function Pricing() {
             <button
               onClick={() => setIsAnnual(false)}
               className={`px-6 py-2 rounded-full font-semibold transition ${
-               !isAnnual? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' : 'text-gray-600 dark:text-gray-400'
+             !isAnnual? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' : 'text-gray-600 dark:text-gray-400'
               }`}
             >
               Vista Mensual
@@ -157,15 +156,16 @@ export default function Pricing() {
               </CardContent>
 
               <CardFooter>
-                <Link href="/demo" className="w-full">
+                <div className="w-full">
                   <Button
                     variant="secondary"
                     size="md"
                     className="w-full"
+                    disabled
                   >
                     {plan.cta}
                   </Button>
-                </Link>
+                </div>
               </CardFooter>
             </Card>
           ))}

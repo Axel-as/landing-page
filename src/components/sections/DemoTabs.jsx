@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Link from 'next/link'
 
 const tabs = [
   {
@@ -61,7 +60,7 @@ export default function DemoTabs() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeTab === tab.id
-                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
@@ -84,15 +83,15 @@ export default function DemoTabs() {
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
                 {currentTab.desc}
               </p>
-              <Link href="/demo">
+              <a href="#features">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-semibold"
                 >
-                  Ver disclaimer completo →
+                  Ver más detalles →
                 </motion.button>
-              </Link>
+              </a>
             </motion.div>
           </AnimatePresence>
 

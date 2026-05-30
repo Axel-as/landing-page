@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 // Logos falsos generados para demo - no son marcas reales
 const logos = [
@@ -40,17 +39,14 @@ export default function LogoStrip() {
               whileHover={{ scale: 1.05 }}
               className="flex justify-center items-center h-12"
             >
-              <Link
-                href="/demo"
-                className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-all duration-300 group"
-              >
+              <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-all duration-300 group cursor-default">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center text-white font-bold text-sm group-hover:from-blue-500 group-hover:to-purple-600 transition-all">
                   {logo.initial}
                 </div>
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-400 hidden lg:block">
                   {logo.name}
                 </span>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -69,9 +65,8 @@ export default function LogoStrip() {
             className="flex gap-12"
           >
             {[...logos,...logos].map((logo, i) => (
-              <Link
+              <div
                 key={`${logo.name}-${i}`}
-                href="/demo"
                 className="flex-shrink-0 h-12 flex items-center gap-2 opacity-60"
               >
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center text-white font-bold text-sm">
@@ -80,7 +75,7 @@ export default function LogoStrip() {
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-400 whitespace-nowrap">
                   {logo.name}
                 </span>
-              </Link>
+              </div>
             ))}
           </motion.div>
         </div>
