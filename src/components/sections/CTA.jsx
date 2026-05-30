@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export default function CTA() {
   return (
@@ -34,25 +33,25 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/demo">
+            <a href="#features">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-white text-gray-900 rounded-xl font-bold text-lg shadow-2xl"
               >
-                Ver página demo →
+                Ver diseño →
               </motion.button>
-            </Link>
+            </a>
             
-            <Link href="/demo">
+            <a href="https://github.com/tu-usuario/tu-repo" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-xl font-semibold text-lg"
               >
-                Más info de la demo
+                Ver código en GitHub
               </motion.button>
-            </Link>
+            </a>
           </div>
 
           <div className="flex flex-wrap gap-8 justify-center mt-12 text-sm text-white/70">
