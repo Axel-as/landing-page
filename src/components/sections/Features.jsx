@@ -1,55 +1,56 @@
 import { motion } from 'framer-motion'
 import Card, { CardHeader, CardTitle, CardDescription } from '@/components/ui/Card'
+import Link from 'next/link'
 
 const features = [
-  { 
-    title: 'Dashboards en Tiempo Real', 
-    desc: 'Visualizá métricas críticas sin delay',
+  {
+    title: 'Paneles de Datos [Demo]',
+    desc: 'Concepto de visualización de métricas en interfaz',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     )
   },
-  { 
-    title: 'Alertas Inteligentes', 
-    desc: 'Notificaciones cuando algo importante pasa',
+  {
+    title: 'Sistema de Notificaciones [Demo]',
+    desc: 'Diseño de alertas y estados para el usuario',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0.538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
       </svg>
     )
   },
-  { 
-    title: 'API Developer-First', 
-    desc: 'Integra en minutos con nuestra REST API',
+  {
+    title: 'Integración API [Demo]',
+    desc: 'Mockup de documentación y endpoints REST',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     )
   },
-  { 
-    title: 'Seguridad Enterprise', 
-    desc: 'SOC2, GDPR y encriptación end-to-end',
+  {
+    title: 'Panel de Seguridad [Demo]',
+    desc: 'Interfaz conceptual de permisos y roles',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 0 01-8.618 3.04A12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     )
   },
-  { 
-    title: 'Colaboración', 
-    desc: 'Comentarios y permisos por equipo',
+  {
+    title: 'Herramientas de Equipo [Demo]',
+    desc: 'Prototipo de comentarios y gestión de usuarios',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     )
   },
-  { 
-    title: 'Exporta Todo', 
-    desc: 'CSV, PDF, API. Tus datos son tuyos',
+  {
+    title: 'Exportación de Datos [Demo]',
+    desc: 'Diseño de flujos para descargar información',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -62,38 +63,48 @@ export default function Features() {
   return (
     <section className="py-20 px-4" id="features">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-500 text-sm font-semibold mb-4">
+            SECCIÓN DEMO
+          </div>
+
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Todo lo que necesitás
+            Conceptos de interfaz
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
-            Potencia tu equipo con features de nivel enterprise
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Estas son maquetas de UI para portafolio. Ninguna funcionalidad está conectada a un backend real.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feat, i) => (
-            <Card 
-              key={feat.title}
-              variant="default" 
-              hover 
-              glow={i === 2} 
-              className="cursor-pointer"
-            >
-              <CardHeader>
-                <div className="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-4 text-white">
-                  {feat.icon}
-                </div>
-                <CardTitle className="text-xl">{feat.title}</CardTitle>
-              </CardHeader>
-              <CardDescription>{feat.desc}</CardDescription>
-            </Card>
+            <Link href="/demo" key={feat.title}>
+              <Card
+                variant="default"
+                hover
+                className="cursor-pointer h-full border border-gray-200 dark:border-gray-800 hover:border-blue-500/50 transition"
+              >
+                <CardHeader>
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4 text-white">
+                    {feat.icon}
+                  </div>
+                  <CardTitle className="text-xl">{feat.title}</CardTitle>
+                </CardHeader>
+                <CardDescription>{feat.desc}</CardDescription>
+              </Card>
+            </Link>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Todo el contenido es ficticio. Proyecto de demostración sin fines comerciales.
+          </p>
         </div>
       </div>
     </section>

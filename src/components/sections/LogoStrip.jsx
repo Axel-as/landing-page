@@ -1,26 +1,33 @@
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
+// Logos falsos generados para demo - no son marcas reales
 const logos = [
-  { name: 'Notion', url: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
-  { name: 'Vercel', url: 'https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png' },
-  { name: 'Stripe', url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg' },
-  { name: 'Linear', url: 'https://cdn.worldvectorlogo.com/logos/linear-1.svg' },
-  { name: 'Figma', url: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg' },
-  { name: 'Slack', url: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg' },
+  { name: 'Apex Co [Demo]', initial: 'A' },
+  { name: 'Nova Labs [Demo]', initial: 'N' },
+  { name: 'Pixel Works [Demo]', initial: 'P' },
+  { name: 'Quantum [Demo]', initial: 'Q' },
+  { name: 'Orbit Inc [Demo]', initial: 'O' },
+  { name: 'Zenith [Demo]', initial: 'Z' },
 ]
 
 export default function LogoStrip() {
   return (
     <section className="py-16 px-4 border-y border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50">
       <div className="max-w-7xl mx-auto">
-        <motion.p 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-gray-500 dark:text-gray-400 mb-8 uppercase tracking-wider font-semibold"
+          className="text-center mb-8"
         >
-          Confiado por +10,000 equipos de producto
-        </motion.p>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-500 text-xs font-semibold mb-4">
+            DISEÑO CONCEPTUAL
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider font-semibold">
+            Ejemplo de sección "Nuestros clientes" - Todos los logos son ficticios
+          </p>
+        </motion.div>
 
         <div className="hidden md:grid grid-cols-6 gap-8 items-center">
           {logos.map((logo, i) => (
@@ -30,45 +37,57 @@ export default function LogoStrip() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.1 }}
-              className="flex justify-center items-center h-12 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              className="flex justify-center items-center h-12"
             >
-              <img 
-                src={logo.url} 
-                alt={logo.name} 
-                className="max-h-8 w-auto object-contain"
-              />
+              <Link
+                href="/demo"
+                className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-all duration-300 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center text-white font-bold text-sm group-hover:from-blue-500 group-hover:to-purple-600 transition-all">
+                  {logo.initial}
+                </div>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400 hidden lg:block">
+                  {logo.name}
+                </span>
+              </Link>
             </motion.div>
           ))}
         </div>
 
         <div className="md:hidden relative overflow-hidden">
           <motion.div
-            animate={{ x: [0, -1035] }}
+            animate={{ x: [0, -1200] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 25,
                 ease: "linear",
               },
             }}
             className="flex gap-12"
           >
-            {[...logos, ...logos].map((logo, i) => (
-              <div
+            {[...logos,...logos].map((logo, i) => (
+              <Link
                 key={`${logo.name}-${i}`}
-                className="flex-shrink-0 h-12 w-24 flex items-center justify-center grayscale opacity-60"
+                href="/demo"
+                className="flex-shrink-0 h-12 flex items-center gap-2 opacity-60"
               >
-                <img 
-                  src={logo.url} 
-                  alt={logo.name} 
-                  className="max-h-8 w-auto object-contain"
-                />
-              </div>
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center text-white font-bold text-sm">
+                  {logo.initial}
+                </div>
+                <span className="text-sm font-medium text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                  {logo.name}
+                </span>
+              </Link>
             ))}
           </motion.div>
         </div>
+
+        <p className="text-xs text-center text-gray-400 dark:text-gray-600 mt-8">
+          * Ninguna de estas empresas existe. Sección solo para mostrar diseño de UI.
+        </p>
       </div>
     </section>
   )
