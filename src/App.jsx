@@ -9,7 +9,7 @@ import Pricing from './components/sections/Pricing'
 import CTA from './components/sections/CTA'
 import Footer from './components/layout/Footer'
 
-// Banner global que aparece en todas las páginas
+
 function DemoBanner() {
   return (
     <div className="bg-yellow-500 text-black text-center py-2 px-4 text-sm font-semibold sticky top-0 z-[60]">

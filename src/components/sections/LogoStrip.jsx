@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-// Logos falsos generados para demo - no son marcas reales
+
 const logos = [
   { name: 'Apex Co [Demo]', initial: 'A' },
   { name: 'Nova Labs [Demo]', initial: 'N' },

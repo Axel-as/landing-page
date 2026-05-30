@@ -74,7 +74,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 blur-3xl opacity-20 rounded-3xl"></div>
           
           <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-2xl p-8 shadow-2xl relative border border-gray-200 dark:border-gray-700">
-            {/* Watermark */}
+
             <div className="absolute top-4 right-4 text-xs font-bold text-gray-400 dark:text-gray-600 rotate-12 select-none">
               UI DEMO
             </div>

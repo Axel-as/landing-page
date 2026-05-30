@@ -101,7 +101,7 @@ export default function Testimonials() {
               className="absolute w-full"
             >
               <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-3xl p-8 md:p-12 max-w-3xl mx-auto border border-gray-200 dark:border-gray-700 relative">
-                {/* Watermark */}
+
                 <div className="absolute top-4 right-4 text-xs font-bold text-gray-300 dark:text-gray-700 rotate-12 select-none">
                   UI DEMO
                 </div>
